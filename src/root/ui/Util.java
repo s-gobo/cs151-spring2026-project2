@@ -153,18 +153,18 @@ public class Util {
 
     public String showMembershipMenu() {
         System.out.println("Membership level:");
-        System.out.println("  1. Gold");
-        System.out.println("  2. Silver");
-        System.out.println("  3. Bronze");
+        System.out.println("  1. PLatinum ( 10% discount) ");
+        System.out.println("  2. Diamond ( 20% discount) ");
+        System.out.println("  3. Normal (no discount)");
         System.out.print("Choose membership level: ");
         try {
             switch (readInt()) {
                 case 1:
-                    return "Gold";
+                    return "Platinum";
                 case 2:
-                    return "Silver";
+                    return "Diamond";
                 case 3:
-                    return "Bronze";
+                    return "Normal";
                 default:
                     return null;
             }

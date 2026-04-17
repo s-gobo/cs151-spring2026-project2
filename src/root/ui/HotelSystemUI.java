@@ -3,7 +3,9 @@ package ui;
 import exception.InvalidDateRangeException;
 import exception.OverCapacityException;
 import exception.RoomUnavailableException;
+import guest.DiamondGuest;
 import guest.Guest;
+import guest.PlatinumGuest;
 import guest.Rating;
 import guest.Reservation;
 import hotel.Employee;
@@ -363,8 +365,13 @@ public class HotelSystemUI {
         String membership = util.showMembershipMenu();
         if (membership == null)
             return null;
+        
+        Guest guest = switch (membership) {
+            case "Platinum" -> new PlatinumGuest(name);
+            case "Diamond" -> new DiamondGuest(name);
+            default -> new Guest(name, membership);
+        };
 
-        Guest guest = new Guest(name, membership);
         hotel.registerGuest(guest);
         System.out.println("Guest registered: " + guest.getGuestId());
         return guest;

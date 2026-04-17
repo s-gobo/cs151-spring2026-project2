@@ -18,10 +18,10 @@ public class Guest implements Chargeable {
 
 	private String guestId;
 	private String name;
-	private String membershipLevel;
-	private double outstandingBalance;
-	private Reservation currentReservation;
-	private List<Reservation> reservations;
+	protected String membershipLevel;
+	protected double outstandingBalance;
+	protected Reservation currentReservation;
+	protected List<Reservation> reservations;
 
 	// This is my constructor
 	public Guest(String name, String membershipLevel) {
